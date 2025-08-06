@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced HTML5 Form</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; background-color: #f0f2f5; color: #111827; margin: 0; padding: 2rem; display: grid; place-items: center; min-height: 100vh; }
+        .form-container { max-width: 800px; width: 100%; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
+        h1 { color: #89B4FA; font-size: 2.25rem; }
+        .description { margin-bottom: 2rem; color: #6b7280; }
+        fieldset { border: 1px solid #e5e7eb; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
+        legend { font-weight: 600; color: #89B4FA; padding: 0 0.5rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .input-group { display: flex; flex-direction: column; }
+        label { margin-bottom: 0.5rem; font-weight: 500; }
+        input { padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1rem; transition: border-color 0.2s, box-shadow 0.2s; }
+        input:focus { border-color: #89B4FA; box-shadow: 0 0 0 2px rgba(137, 180, 250, 0.4); outline: none; }
+        input:invalid { border-color: #ef4444; }
+        button { background-color: #89B4FA; color: #1c3d5a; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background-color 0.2s; }
+        button:hover { background-color: #7aa9e8; }
+        .format-description { font-size: 0.875rem; color: #6b7280; margin-top: 0.25rem; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Enhanced HTML5 Form</h1>
+        <p class="description">This form uses native browser validation. Try submitting with empty or invalid fields.</p>
+        <form>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="grid">
+                    <div class="input-group">
+                        <label for="fullName">Full Name</label>
+                        <input id="fullName" name="fullName" type="text" placeholder="e.g., Jane Doe" required minlength="3" autocomplete="name" />
+                    </div>
+                    <div class="input-group">
+                        <label for="birthDate">Date of Birth</label>
+                        <input id="birthDate" name="birthDate" type="date" required autocomplete="bday" />
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Contact & Account</legend>
+                <div class="grid">
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <input id="email" name="email" type="email" placeholder="you@example.com" required autocomplete="email" />
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">Phone Number</label>
+                        <input id="phone" name="phone" type="tel" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="tel" />
+                        <p class="format-description">Format: 123-456-7890</p>
+                    </div>
+                    <div class="input-group">
+                        <label for="age">Age</label>
+                        <input id="age" name="age" type="number" placeholder="18" min="18" max="120" required />
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input id="password" name="password" type="password" placeholder="••••••••" required minlength="8" autocomplete="new-password" />
+                    </div>
+                </div>
+            </fieldset>
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+</body>
+</html>
